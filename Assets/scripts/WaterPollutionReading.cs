@@ -3,7 +3,6 @@ using System.Collections;
 
 public class WaterPollutionReading {
 
-
   
         public string id { get; set; }
         public string createdAt { get; set; }

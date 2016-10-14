@@ -1,6 +1,6 @@
 using UnityEngine;
 using Pathfinding.Serialization.JsonFx; //make sure you include this using
-using System.Globalization;
+using System.Globalization; //make sure to use this too for the point x, y, z
 
 public class Sketch : MonoBehaviour
 {
@@ -27,22 +27,6 @@ public class Sketch : MonoBehaviour
 
         int totalRows = pollution.Length;
         Debug.Log("total row" + totalRows);
-        //totalRows= 5;
-        //int totalDistance = 10;
-
-        /*int a = 0;
-        int b = 0;
-        int c = 0;
-        int d = 0;
-        int e = 0;
-        int f = 0;
-        int g = 0;
-        int h = 0;
-        int i = 0;
-        int j = 0;
-        int k = 0;*/
-
-
 
 
         //We can now loop through the array of objects and access each object individually
@@ -62,47 +46,9 @@ public class Sketch : MonoBehaviour
             newSphere.name = id.ToString();
             var children = newSphere.GetComponentsInChildren<TextMesh>();
             newSphere.GetComponentInChildren<TextMesh>().text = location;
-
-
-
-
-            //Example of how to use the object
-            //Debug.Log("The age is: " + cenotaph.dateofdeath);
-            /*float perc = i / (float)totalCubes;
-            i++;
-            float x = perc * totalDistance;
-            float y = 5.0f;
-            float z = 0.0f;*/
-            //GameObject newCube = (GameObject)Instantiate(myPrefab, new Vector3(x, y, z), Quaternion.identity);
-
-            /*var children = newCube.GetComponentsInChildren<TextMesh>();
-            foreach (TextMesh child in children)
-            {
-                if (child.tag == "second" && check == 0)
-                {
-                    child.text = cenotaph.cemetery;
-                }
-                newCube.GetComponent<myCubeScript>().setSize(.5f);
-                newCube.GetComponent<myCubeScript>().rotateSpeed = -.25f;
-                newCube.GetComponentInChildren<TextMesh>().text = cenotaph.dateofdeath;
-                int age = int.Parse(cenotaph.ageatdeath);
-                if (age <= 30)
-                {
-                    colour = Color.green;
-
-                } else if (age >=31 && age <= 64)
-                {
-                    colour = Color.yellow;
-                }
-                else
-                {
-                    colour = Color.red;
-                }
-
-                newCube.GetComponent<Renderer>().material.color = colour;
-            }*/
         }
     }
+          
 
     // Update is called once per frame
     void Update()
