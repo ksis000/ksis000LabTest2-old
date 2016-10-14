@@ -115,10 +115,22 @@ public class Sketch : MonoBehaviour
             if (Physics.Raycast(ray, out hit, 100.0f))
             {
                 Material white = Resources.Load("WhiteSmooth", typeof(Material)) as Material;
-                Debug.Log("Color " + hit.collider.gameObject.GetComponent<Renderer>().material);
-                Debug.Log("res " + white);
-                Debug.Log("bool " + hit.collider.gameObject.GetComponent<Renderer>().materials[0].Equals(white));
-                if (hit.collider.gameObject.GetComponent<Renderer>().materials[0].Equals(white))
+                string whiteName = white.ToString();
+
+                string objName = hit.collider.gameObject.GetComponent<Renderer>().material.color.ToString();
+
+                Debug.Log("Color " + objName);
+                Debug.Log("res " + whiteName);
+                Debug.Log("bool " + objName.Equals(whiteName));
+                TextMesh x = GameObject.Find("x").GetComponent<TextMesh>();
+                TextMesh y = GameObject.Find("y").GetComponent<TextMesh>();
+                TextMesh z = GameObject.Find("z").GetComponent<TextMesh>();
+                x.text = "X: " + hit.collider.gameObject.transform.position.x.ToString();
+                y.text = "Y: " + hit.collider.gameObject.transform.position.y.ToString();
+                z.text = "Z: " + hit.collider.gameObject.transform.position.z.ToString();
+
+
+                if (hit.collider.gameObject.GetComponent<Renderer>().material.color == white.color)
                 {
                     Material newMat = Resources.Load("TealSmooth", typeof(Material)) as Material;
                     hit.collider.gameObject.GetComponent<Renderer>().material = newMat;
